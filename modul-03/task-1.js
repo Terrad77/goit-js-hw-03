@@ -1,10 +1,11 @@
 "use strict";
-function getLastElementMeta(array) {
-  return [array.length - 1, array[array.length - 1]];
+
+function slugify(title) {
+  const slug = title.toLowerCase().split(" ").join("-");
+  return slug;
 }
 
-console.log(getLastElementMeta(["apple", "peach", "pear", "banana"])); // повертає [3, "banana"]);
-
-// const planets = ["Earth", "Mars", "Venus"];
-// const lastElementIndex = planets.length - 1;
-// console.log(planets[lastElementIndex]); // "Venus"
+console.log(slugify("Arrays for begginers")); // "arrays-for-begginers"
+console.log(slugify("English for developer")); // "english-for-developer"
+console.log(slugify("Ten secrets of JavaScript")); // "ten-secrets-of-javascript"
+console.log(slugify("How to become a JUNIOR developer in TWO WEEKS")); // "how-to-become-a-junior-developer-in-two-weeks"
